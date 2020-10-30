@@ -10,6 +10,8 @@ GET http://localhost:3000/parks&location=dakota will show all parks "dakota" in 
 
 GET http://localhost:3000/parks&name=pro&location=north will show all parks with both "pro" in the name and "north" in the location
 
+GET http://localhost:3000/parks?page=2 will show the second page of results from the pagination
+
 GET http://localhost:3000/random will generate a random park
 
 POST http://localhost:3000/parks will add a park as long as name, location, review, and rating are present.
