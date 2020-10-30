@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   resources :parks
 
-  get 'name/random', to: 'parks#random'
+  get '/random', to: 'parks#random'
 end
