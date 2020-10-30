@@ -12,7 +12,7 @@ class ParksController < ApplicationController
   end
 
   def show
-    @parks = Park.find(params[:id])
+    @park = Park.find(params[:id])
     json_response(@park)
   end
 
@@ -24,14 +24,14 @@ class ParksController < ApplicationController
   def update
     @park = Park.find(params[:id])
     if @park.update!(park_params)
-      render status: 200, json: { message: "Review successfully updated!" }
+      render status: 200, json: { message: "Park successfully updated!" }
     end
   end
 
   def destroy
     @park = Park.find(params[:id])
-    if @review.destroy!
-      render status: 200, json: { message: "Review successfully destroyed" }
+    if @park.destroy!
+      render status: 200, json: { message: "Park successfully destroyed" }
     end
   end
 
@@ -43,3 +43,4 @@ class ParksController < ApplicationController
   def park_params
     params.permit(:name, :location, :review, :rating)
   end
+end

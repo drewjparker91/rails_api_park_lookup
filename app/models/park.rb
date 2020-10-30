@@ -1,7 +1,9 @@
 class Park < ApplicationRecord
   validates :name, :location, :review, :rating, presence: true
   validates :rating, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 5 }
-  
+  scope :search, -> (name, location) { where("name ilike ? AND location ilike?", "%#{name}%", "%#{location}%") }
+
+before_save(:titleize)
 
 private
   def titleize
