@@ -36,6 +36,12 @@ class ParksController < ApplicationController
   end
 
   def random
+    name_array = []
+    Park.all.each do |obj|
+      name_array.push(obj[:name])
+    end
+    @parks = Park.random_name(name_array)
+    json_response(@parks)
   end
 
   private
