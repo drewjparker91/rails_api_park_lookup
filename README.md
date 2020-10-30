@@ -1,6 +1,8 @@
 # README
 
-GET http://localhost:3000/parks will show all parks in the database
+GET http://localhost:3000/parks?token=74c3fd0b56630a88daddf564f0fb6acf will show first page of paginated parks(10) in the database
+
+GET http://localhost:3000/parks?page=2&token=74c3fd0b56630a88daddf564f0fb6acf
 
 GET http://localhost:3000/parks/1 will show park with :id of "1"
 
@@ -20,4 +22,4 @@ PUT http://localhost:3000/parks/32 will update the park with id "32"
 
 DELETE http://localhost:3000/parks/32 will delete the park with the id "32
 
-
+token = 74c3fd0b56630a88daddf564f0fb6acf
