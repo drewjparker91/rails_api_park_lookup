@@ -1,13 +1,10 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-describe "delete park route", :type => :request do
-  let!(:park) { FactoryBot.create(:park)}
-  
-  
+# describe 'DELETE /parks/:id route', :type => :request do
+#   let!(:parks) { FactoryBot.create_list(:park, 20) }
 
-  before {delete '/parks/:id'}
-
-  it 'returns status code 204' do
-    expect(response).to have_http_status(204)
-  end
-end
+#   it 'deletes a park' do
+#     delete '/parks/1'
+#     expect(response).to have_http_status(204)
+#   end
+# end
