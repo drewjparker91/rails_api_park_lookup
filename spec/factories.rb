@@ -5,4 +5,8 @@ FactoryBot.define do
     review {Faker::Hipster.paragraph_by_chars(characters: 50, supplemental: false)}
     rating {rand(1...6)}
   end
+
+  factory(:api_key) do
+    token "SomeRandomToken"
+  end
 end
