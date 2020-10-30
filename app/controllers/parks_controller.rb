@@ -7,7 +7,7 @@ class ParksController < ApplicationController
     if params[:location]
       location = params[:location]
     end
-    @parks = Park.search(name, location)
+    @parks = Park.search(name, location).paginate(page: params[:page], per_page: 10)
     json_response(@parks)
   end
 
