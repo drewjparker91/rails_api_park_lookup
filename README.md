@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+GET http://localhost:3000/parks will show all parks in the database
 
-Things you may want to cover:
+GET http://localhost:3000/parks/1 will show park with :id of "1"
 
-* Ruby version
+GET http://localhost:3000/parks&name=south will show all parks with "south" in the name
 
-* System dependencies
+GET http://localhost:3000/parks&location=dakota will show all parks "dakota" in the location
 
-* Configuration
+GET http://localhost:3000/parks&name=pro&location=north will show all parks with both "pro" in the name and "north" in the location
 
-* Database creation
+POST http://localhost:3000/parks will add a park as long as name, location, review, and rating are present.
 
-* Database initialization
+PUT http://localhost:3000/parks/32 will update the park with id "32"
 
-* How to run the test suite
+DELETE http://localhost:3000/parks/32 will delete the park with the id "32
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
