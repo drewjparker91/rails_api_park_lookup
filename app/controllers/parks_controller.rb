@@ -40,7 +40,7 @@ class ParksController < ApplicationController
     Park.all.each do |obj|
       name_array.push(obj[:name])
     end
-    @parks = Park.random_name(name_array)
+    @parks = Park.random_name(name_array).limit(1)
     json_response(@parks)
   end
 
