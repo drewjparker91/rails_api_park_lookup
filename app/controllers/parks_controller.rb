@@ -1,4 +1,5 @@
 class ParksController < ApplicationController
+  before_action :restrict_access
 
   def index
     if params[:name]
@@ -50,6 +51,11 @@ class ParksController < ApplicationController
   end
 
   private
+
+  def restrict_access
+    api_key = ApiKey.find_by_token(params[:token])
+    head :unauthorized unless api_key
+  end
 
   def park_params
     params.permit(:name, :location, :review, :rating)
