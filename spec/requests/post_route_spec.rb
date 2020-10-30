@@ -15,6 +15,10 @@ describe "post a park route", :type => :request do
   end
 
   it 'returns the park review' do
-    expect(JSON.parse(response.body)['review']).to eq ('test_review')
+    expect(JSON.parse(response.body)['review']).to eq('test_review')
+  end
+
+  it 'returns the park rating' do
+    expect(JSON.parse(response.body)['rating']).to eq(1)
   end
 end
