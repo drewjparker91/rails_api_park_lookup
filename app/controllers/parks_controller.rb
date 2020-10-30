@@ -50,6 +50,16 @@ class ParksController < ApplicationController
     json_response(@parks)
   end
 
+  def highest_rated
+    @highest_rated_park = Park.highest_rated
+    json_response(@highest_rated_park)
+  end
+
+  def lowest_rated
+    @lowest_rated_park = Park.lowest_rated
+    json_response(@lowest_rated_park)
+  end
+
   private
 
   def restrict_access
